@@ -1,3 +1,3 @@
 # tarea03-autoencoder-mvtec
 
-El notebook `tarea03_IA.ipynb` y la configuración Hydra en `conf/` forman parte del repo.
+El notebook `tarea03_IA.ipynb` carga la configuración Hydra de `conf/` con `initialize` y `compose`, sin regenerar los YAML.
