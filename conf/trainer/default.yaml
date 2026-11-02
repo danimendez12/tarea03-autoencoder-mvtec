@@ -1,0 +1,8 @@
+# Hiperparámetros de entrenamiento: iguales en los 8 runs (solo cambia model.loss)
+max_epochs: 100
+batch_size: 32
+lr: 0.001                        # Adam
+accelerator: auto
+devices: 1
+precision: "32"                  # "16-mixed" si hay GPU (decidir en grupo, igual en los 8 runs)
+log_every_n_steps: 10

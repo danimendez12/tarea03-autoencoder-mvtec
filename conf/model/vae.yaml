@@ -1,0 +1,10 @@
+# [P2] Hiperparámetros del VAE. Fijos en los cuatro runs; get_cfg solo cambia model.loss.
+# beta = 1.0e-3: el KL suma sobre z_dim y la reconstrucción es una media por píxel.
+# base_channels = 32 -> canales 32, 64, 128, 256 y mapa espacial 8x8.
+_target_: __main__.VAE
+name: vae
+loss: l1                         # get_cfg(model, loss) lo sobreescribe
+z_dim: 128                       # igual que u-net.yaml (acuerdo del equipo)
+in_channels: 3
+base_channels: 32
+beta: 1.0e-3

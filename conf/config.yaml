@@ -1,0 +1,24 @@
+# Configuración principal. Se carga con get_cfg(model, loss).
+defaults:
+  - model: vae
+  - trainer: default
+  - logger: wandb
+  - _self_
+
+seed: 42
+
+data:
+  raw_root: data/mvtec_raw       # MVTec AD original (solo las 4 clases, sin máscaras)
+  root: data/mvtec128            # imágenes redimensionadas a 128x128x3
+  classes: [cable, capsule, screw, transistor]
+  image_size: 128
+  val_split: 0.1                 # 10 % de las imágenes buenas de train, por clase
+  num_workers: 0                 # se puede subir en Linux
+
+loss_params:
+  alpha: 0.5                     # peso de SSIM en ssim_l1
+  ssim_kernel: 11                # ventana gaussiana de SSIM (igual para todos)
+  ssim_sigma: 1.5
+
+sweep:
+  losses: [l1, l2, ssim, ssim_l1]   # run_all(model) recorre esta lista (reemplaza --multirun)
