@@ -1,0 +1,10 @@
+project: tarea03-autoencoder-mvtec
+entity: AI_TEC                   # equipo de WandB compartido por P1, P2 y P3
+name: ${model.name}_${model.loss}_z${model.z_dim}
+group: ${model.name}
+tags: ["${model.loss}", "${model.name}"]
+log_model: true                  # sube el mejor checkpoint (menor val/loss) como artifact
+
+viz:                             # imágenes que registran los callbacks (sección 7)
+  every_n_epochs: 10             # reconstrucciones y t-SNE de validación cada N épocas y en la última
+  n_images: 16                   # 16 de validación (4 por clase) y 16 de prueba (8 buenas, 8 defectuosas)
