@@ -1,0 +1,13 @@
+# torch: el notebook no fija la versión; usar la build del entorno (Colab trae CUDA).
+torch
+lightning==2.4.0
+hydra-core==1.3.2
+omegaconf==2.3.1
+wandb>=0.21
+torchmetrics==1.6.0
+pandas==3.1.0
+matplotlib==3.11.2
+scikit-learn==1.9.1
+numpy
+pillow
+ipython
